@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  costumer:
+    build: ./costumer
+    command: >
+      gunicorn -b 0.0.0.0:8080
+      "costumer.app:app"
+    environment:
+      PYTHONUNBUFFERED: 'true'
+    volumes:
+      - '.:/costumer'
+    ports:
+      - '8080:8080'
+
+  producer:
+    build: ./producer
+    command: >
+      gunicorn -b 0.0.0.0:8081
+      "producer.app:app"
+    environment:
+      PYTHONUNBUFFERED: 'true'
+    volumes:
+      - '.:/producer'
+    ports:
+      - '8081:8081'
