@@ -64,7 +64,7 @@ coverage.xml
 #Pipfile.lock
 
 # Environments
-.venv
+venv
 env/
 venv/
 ENV/
@@ -81,5 +81,4 @@ venv.bak/
 /.blackbox/pubring.gpg~
 /.blackbox/pubring.kbx~
 /.blackbox/secring.gpg
-/instance/flask-dev.cfg
-/instance/flask-test.cfg
+
